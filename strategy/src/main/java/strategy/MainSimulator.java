@@ -3,7 +3,7 @@ package strategy;
 import fly.FlyNoWay;
 import quack.MuteQuack;
 
-public class DuckSimulator {
+public class MainSimulator {
 
 	public static void main(String[] args) {
 		Duck mallard = new MallardDuck();

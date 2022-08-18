@@ -1,9 +1,7 @@
 package strategy;
 
 import fly.FlyNoWay;
-import fly.FlyWithWings;
 import quack.MuteQuack;
-import quack.Squeak;
 
 public class RubberDuck extends Duck {
 
