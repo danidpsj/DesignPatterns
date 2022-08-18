@@ -7,3 +7,4 @@ Each patter example is composed of:
       -A README describing the simulation and the pattern.
       
 To execute each example, on each pattern find the class MainSimulator.java, compile and execute it.
+Each class diagram has a .uxf editable file and a png version
