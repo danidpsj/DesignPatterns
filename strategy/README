@@ -1,0 +1,29 @@
+This file describes the STRATEGY PATTERN and its examplo codified into this project
+
+A class diagram of the structure used is placed under StrategyPatternDiagram.uxf file.
+
+The STRATEGY PATTERN defines a family of algorithms, encapsulates each one, and makes them interchangable.
+Strategy lets the algorithm vary independent from clients that use it.
+
+In this example we have a duck simulator, with different types of ducks. Every duck can swim, quack, be displayed and fly.
+Every duck swim the same, but each duck has a different display. Related with quack and fly, there are certain types of fly and quack options,
+each duck belong to a specific group into these two fields.
+
+To fulfill the requirements we should implement the abstract class Duck, with the common functionalities foer every Duck.
+As all the ducks swim the same way, we can definite into Duck class the method swim and implement it.
+As all the ducks are displayed different, we can definine into Duck class the abstract method display(), which will be overrited on each Duck subclass
+The strategy patterns arrive when we want to define fly and quack functionallities. As those are not equal on each duck, but neither different on each.
+
+Instead of defining the methods on each Duck subclass, duplicating code, we should apply the pattern by creating interfaces.
+We will create the FlyBehaviour and QuackBehaviour interfaces which defines fly() and quack() methods.
+then we will create the required implementations of each fly and quack type (FlyNoWay.java, FlyWithWings.java etc)
+the final point is to define into the Duck class the variables FlyBehaviour flybehaviour and QuackBehaviour quackbehaviour;
+refering to the interface and not specific classes.
+Now on the performFly() and performQuack, we class flybehaviour.fly() and quackbehaviour.quack(), refering to the general methods without implementations.
+
+Finally, on the Ducks subclasses (MallardDuck and RubberDuck), into the constructor, we set to flybehaviour and quackbehaviour
+the specific implementations we desire for each duck. By doing this, when performFly method of super class is called, the setted implementation of each interface
+will be used to perform the fly() and quack().
+
+By doing this we follow the strategy patter, encapsulating what varies. If we need new Fly or Quack implementations, we just need to create a new interface implamentation
+and we are not duplicating code
